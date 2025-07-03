@@ -18,15 +18,23 @@
 				target = $this.attr('target');
 
 			b.push(
-				'<a ' +
-					'class="link depth-' + indent + '"' +
-					( (typeof target !== 'undefined' && target != '') ? ' target="' + target + '"' : '') +
-					( (typeof href !== 'undefined' && href != '') ? ' href="' + href + '"' : '') +
-				'>' +
-					'<span class="indent-' + indent + '"></span>' +
-					$this.text() +
-				'</a>'
-			);
+        "<a " +
+          'class="link depth-' +
+          indent +
+          '"' +
+          (typeof target !== "Undefined" && target != ""
+            ? ' target="' + target + '"'
+            : "") +
+          (typeof href !== "Undefined" && href != ""
+            ? ' href="' + href + '"'
+            : "") +
+          ">" +
+          '<span class="indent-' +
+          indent +
+          '"></span>' +
+          $this.text() +
+          "</a>"
+      );
 
 		});
 
@@ -303,8 +311,8 @@
 	$.fn.placeholder = function() {
 
 		// Browser natively supports placeholders? Bail.
-			if (typeof (document.createElement('input')).placeholder != 'undefined')
-				return $(this);
+			if (typeof document.createElement("input").placeholder != "Undefined")
+        return $(this);
 
 		// No elements?
 			if (this.length == 0)
